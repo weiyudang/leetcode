@@ -56,4 +56,6 @@ if __name__ == '__main__':
     numbers1 = [2, 2, 2, 0, 1]
     numbers2 = [1, 1, 1]
     numbers3 = [3, 1, 3]
-    print(solution.minArray([ 5, 6, 7, 0, 1,2,3]))
+    numbers4=[2,5,6,0,0,1,2]
+    numbers5=[1,1,3,1,1]
+    print(solution.minArray(numbers5))

@@ -138,7 +138,7 @@ leetcode  34
 输出: 4
 ```
 
-### 11. [81. 搜索旋转排序数组 II](https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/)
+### 11. [81. 搜索旋转排序数组 II](https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/) :confused:
 
 [code](11.py)
 
@@ -149,9 +149,118 @@ leetcode  34
 输出: true
 ```
 
+![image-20200405214014972](README.assets/image-20200405214014972.png)
+
+```java
+public boolean search(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+        int start = 0;
+        int end = nums.length - 1;
+        int mid;
+        while (start <= end) {
+            mid = start + (end - start) / 2;
+            if (nums[mid] == target) {
+                return true;
+            }
+            if (nums[start] == nums[mid]) {
+                start++;
+                continue;
+            }
+            //前半部分有序
+            if (nums[start] < nums[mid]) {
+                //target在前半部分
+                if (nums[mid] > target && nums[start] <= target) {
+                    end = mid - 1;
+                } else {  //否则，去后半部分找
+                    start = mid + 1;
+                }
+            } else {
+                //后半部分有序
+                //target在后半部分
+                if (nums[mid] < target && nums[end] >= target) {
+                    start = mid + 1;
+                } else {  //否则，去后半部分找
+                    end = mid - 1;
+
+                }
+            }
+        }
+        //一直没找到，返回false
+        return false;
+
+    }
+
+
+```
 
 
 
+### 12. [153. 寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
+
+[code](12.py)
+
+
+
+### 13. [74. 搜索二维矩阵](https://leetcode-cn.com/problems/search-a-2d-matrix/)
+
+[code](13.py)
+
+```text
+输入:
+matrix = [
+  [1,   3,  5,  7],
+  [10, 11, 16, 20],
+  [23, 30, 34, 50]
+]
+target = 3
+输出: true
+
+输入:
+matrix = [
+  [1,   3,  5,  7],
+  [10, 11, 16, 20],
+  [23, 30, 34, 50]
+]
+target = 13
+输出: false
+```
+
+###  14. [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/)
+
+[code](14.py)
+
+### 15. [209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) :confused:
+
+[code](15.py)
+
+### 16. [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)
+
+[code](16.py)
+
+```
+输入: 
+    1
+   / \
+  2   3
+ / \  /
+4  5 6
+
+输出: 6
+```
+
+
+
+
+
+
+
+
+
+## reference
+
+- [表情](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
 
 

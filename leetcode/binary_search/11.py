@@ -14,7 +14,10 @@
 近阶：
 这是 搜索旋转排序数组 的延伸题目，本题中的 nums  可能包含重复元素。
 这会影响到程序的时间复杂度吗？会有怎样的影响，为什么？
+答：不会影响时间复杂度，时间复杂度都是Olog(n)
+# https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/solution/zai-javazhong-ji-bai-liao-100de-yong-hu-by-reedfan/
 '''
+
 
 class Solution(object):
     def search(self, nums, target):
@@ -23,8 +26,51 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
-        pass
+        if not nums:
+            return False
+
+        pivot_index = self.findPivote(nums)
+        print(pivot_index)
+        if target <= nums[-1]:
+            return self.binary_search(nums[pivot_index:], target)
+        else:
+            return self.binary_search(nums[:pivot_index], target)
+
+    def binary_search(self, nums, target):
+
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = left + (right - left) // 2
+            if nums[mid] < target:
+                left = mid + 1
+            elif nums[mid] > target:
+                right = mid-1
+            else:
+                return True
+        # 返回下界
+        return False
+
+    def findPivote(self, nums):
+        left, right = 0, len(nums) - 1
+
+        while left < right:
+
+            mid = left + right >> 1
+            # print(left, right)
+            # print(mid)
+            if nums[mid] > nums[right]:
+                left = mid + 1
+            elif nums[mid] < nums[right]:
+                right = mid
+            else:
+                right -= 1
+
+        return left
 
 
 if __name__ == '__main__':
     solution = Solution()
+    nums = [1]
+    target = 1
+    print(solution.search(nums, target))
+    print(nums[0:])
