@@ -235,9 +235,11 @@ target = 13
 
 [code](15.py)
 
-### 16. [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)
+### 16. [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/) :confused:
 
 [code](16.py)
+
+二分查找好好理解
 
 ```
 输入: 
@@ -250,7 +252,113 @@ target = 13
 输出: 6
 ```
 
+### 17. [230. 二叉搜索树中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/)
 
+[code](17.py)
+
+<img src="https://pic.leetcode-cn.com/25159a5137867644b75f203ee1917645d2cd454d8f4871e371d7edfa67bef083-file_1579413216176" alt="在这里插入图片描述" style="zoom:50%;" />
+
+```
+输入: root = [3,1,4,null,2], k = 1
+   3
+  / \
+ 1   4
+  \
+   2
+输出: 1
+```
+
+```
+输入: root = [5,3,6,2,4,null,null,1], k = 3
+       5
+      / \
+     3   6
+    / \
+   2   4
+  /
+ 1
+
+输出: 3
+```
+
+### 18. [240. 搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/)
+
+[code](18.py)
+
+
+
+```
+编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target。该矩阵具有以下特性：
+
+- 每行的元素从左到右升序排列。
+- 每列的元素从上到下升序排列。
+
+[
+  [1,   4,  7, 11, 15],
+  [2,   5,  8, 12, 19],
+  [3,   6,  9, 16, 22],
+  [10, 13, 14, 17, 24],
+  [18, 21, 23, 26, 30]
+]
+
+给定 target = 5，返回 true。
+给定 target = 20，返回 false。
+```
+
+
+
+### 19.[275. H指数 II](https://leetcode-cn.com/problems/h-index-ii/)
+
+[code](19.py)
+
+给定一位研究者论文被引用次数的数组（被引用次数是非负整数），数组已经按照升序排列。编写一个方法，计算出研究者的 h 指数。
+
+h 指数的定义: “h 代表“高引用次数”（high citations），一名科研人员的 h 指数是指他（她）的 （N 篇论文中）至多有 h 篇论文分别被引用了至少 h 次。（其余的 N - h 篇论文每篇被引用次数不多于 h 次。）"
+
+```
+输入: citations = [0,1,3,5,6]
+输出: 3 
+解释: 给定数组表示研究者总共有 5 篇论文，每篇论文相应的被引用了 0, 1, 3, 5, 6 次。
+     由于研究者有 3 篇论文每篇至少被引用了 3 次，其余两篇论文每篇被引用不多于 3 次，所以她的 h 指数是 3。
+
+```
+
+<img src="README.assets/image-20200406170949207.png" alt="image-20200406170949207" style="zoom:50%;" />
+
+### 20. [287. 寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/):confused:
+
+[code](20.py)
+
+- [Refer](https://leetcode-cn.com/problems/find-the-duplicate-number/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by--52/)
+
+![img](https://pic.leetcode-cn.com/5ca220ec5aa6a1c166d2305433b6051bd4287794eeb00b76efa5898cc6cc729b.jpg)
+
+
+
+```
+给定一个包含 n + 1 个整数的数组 nums，其数字都在 1 到 n 之间（包括 1 和 n），可知至少存在一个重复的整数。假设只有一个重复的整数，找出这个重复的数。
+
+输入: [1,3,4,2,2]
+输出: 2
+
+输入: [3,1,3,4,2]
+输出: 3
+
+# 注意第五种解法的理解，转换为环形链表
+```
+
+说明：
+
+- 不能更改原数组（假设数组是只读的）。
+- 只能使用额外的 O(1) 的空间。
+- 时间复杂度小于 $O(n^2)$ 。
+- 数组中只有一个重复的数字，**但它可能不止重复出现一次**
+
+
+
+### 21.[300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+
+[code](21.py)
 
 
 
@@ -261,6 +369,8 @@ target = 13
 ## reference
 
 - [表情](https://www.webfx.com/tools/emoji-cheat-sheet/)
+- [leetcode 刷题指南](https://leetcode.wang/leetcode-142-Linked-List-CycleII.html)
+- 
 
 
 

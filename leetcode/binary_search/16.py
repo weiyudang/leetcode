@@ -17,15 +17,10 @@ class TreeNode(object):
         self.right = None
 
 
-class Solution(object):
+class Solution:
     def countNodes(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
-        pass
+        return 1 + self.countNodes(root.right) + self.countNodes(root.left) if root else 0
 
 
 if __name__ == '__main__':
     solution = Solution()
-
