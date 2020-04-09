@@ -39,7 +39,6 @@ class Solution(object):
 if __name__ == '__main__':
     solution = Solution()
     cost = [[10, 15, 20],[1, 100, 1, 1, 1, 100, 1, 1, 100, 1]]
-
     for i in range(len(cost)):
         print(solution.minCostClimbingStairs(cost[i]))
     # print(range(1,3))
