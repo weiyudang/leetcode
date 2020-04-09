@@ -8,6 +8,10 @@
 说明：
 可能会有多种最长上升子序列的组合，你只需要输出对应的长度即可。
 你算法的时间复杂度应该为 O(n2) 。
+
+思路：
+1。动态规划 dp  首先对i 之前的所有的
+
 '''
 
 
@@ -17,36 +21,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        max_upper = 0
+        dp = []
         for i in range(len(nums)):
-            pivot = i
-            cnt = 1
-            for j in range(i, len(nums)):
-                if nums[j] > nums[pivot]:
-                    cnt += 1
-                    pivot = j
-            if max_upper < cnt:
-                max_upper = cnt
-        return max_upper
+            dp.append(1)
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    dp[i] = max(dp[i], dp[j] + 1)
+        return max(dp)
 
 
 if __name__ == '__main__':
     solution = Solution()
     nums = [10, 9, 2, 5, 3, 7, 101, 18]
-    nums = [10, 9, 2, 5, 3, 4]
-    #   输出: 4
-    #   [2,3,7,101]，它的长度是 4。
-    max_upper = 0
-    for i in range(len(nums)):
-        pivot = i
-        cnt = 1
-        for j in range(i + 1, len(nums)):
-            if nums[j] > nums[pivot]:
-                cnt += 1
-                pivot = j
-        if max_upper < cnt:
-            max_upper = cnt
+    # nums = [10, 9, 2, 5, 3, 4]
 
-    print(max_upper)
-    print(range(1, 3))
-    # print(solution.lengthOfLIS(nums))
+    print(solution.lengthOfLIS(nums))
