@@ -19,26 +19,20 @@
 '''
 
 
-class Solution(object):
+class Solution:
     def minCostClimbingStairs(self, cost):
-        """
-        :type cost: List[int]
-        :rtype: int
-        """
+        n = len(cost)
+        dp = [0] * n
+        dp[0], dp[1] = cost[0], cost[1]
+        for i in range(2, n):
+            dp[i] = min(dp[i - 2], dp[i - 1]) + cost[i]
+        return min(dp[-2], dp[-1])
 
-        size = len(cost)
-        dp = [0] * (size)
-        dp[0] = cost[0]
-        dp[1] = cost[0] if cost[1]>cost[0] else cost[1]
-        for i in range(2, size):
-            dp[i] = min(dp[i - 1] + cost[i], dp[i-2]+cost[i-1])
-
-        return dp
 
 
 if __name__ == '__main__':
     solution = Solution()
-    cost = [[10, 15, 20],[1, 100, 1, 1, 1, 100, 1, 1, 100, 1]]
+    cost = [[10, 15, 20], [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]]
     for i in range(len(cost)):
         print(solution.minCostClimbingStairs(cost[i]))
     # print(range(1,3))

@@ -32,5 +32,52 @@
 
 [code](6.py)
 
+### 7.[62. 不同路径](https://leetcode-cn.com/problems/unique-paths/)
+
+[code](7.py)
+
+![img](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/22/robot_maze.png)
+
+### 8.[63. 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/)
+
+[code](8.py)
+
+```
+# 存在障碍物
+输入:
+[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]
+输出: 2
+解释:
+3x3 网格的正中间有一个障碍物。
+从左上角到右下角一共有 2 条不同的路径：
+
+1. 向右 -> 向右 -> 向下 -> 向下
+2. 向下 -> 向下 -> 向右 -> 向右
+```
+
+
+
+### 9.[96. 不同的二叉搜索树](https://leetcode-cn.com/problems/unique-binary-search-trees/):confused:
+
+[code](9.py)
+
+```
+输入: 3
+输出: 5
+解释:
+给定 n = 3, 一共有 5 种不同结构的二叉搜索树:
+
+   1         3     3      2      1
+    \       /     /      / \      \
+     3     2     1      1   3      2
+    /     /       \                 \
+   2     1         2                 3
+
+```
+
 
 
